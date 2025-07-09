@@ -1,8 +1,8 @@
 version: v1.1.0
 steps:
-  - build: -t samform/docling-serve-cu124:git-submodule-1 -t samform.azurecr.io/docling-serve-cu124:git-submodule-1 -f Containerfile --platform linux/amd64 https://github.com/Samform/docling-serve.git#update-local-changes
+  - build: -t samform/docling-serve-cu124:git-submodule-2 -t samform.azurecr.io/docling-serve-cu124:git-submodule-2 -f Containerfile --platform linux/amd64 https://github.com/Samform/docling-serve.git#update-local-changes
     env:
       - "DOCKER_BUILDKIT=1"
   - push:
-      - samform.azurecr.io/docling-serve-cu124:git-submodule-1
+      - samform.azurecr.io/docling-serve-cu124:git-submodule-2
 
