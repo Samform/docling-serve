@@ -1,4 +1,4 @@
 version: v1.1.0
 steps:
-  - build: -t samform/docling-serve-cu124:git-submodule-1 -f Containerfile https://github.com/Samform/docling-serve#update-local-changes
-    env: DOCKER_BUILDKIT=1
+  - build: -t samform/docling-serve-cu124:git-submodule-1 -f Containerfile . https://github.com/Samform/docling-serve#update-local-changes
+    env: "DOCKER_BUILDKIT=1"
