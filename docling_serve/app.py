@@ -1,5 +1,4 @@
-from monkey_md5 import md5_non_security
-import asyncio
+import docling_serve.monkey_md5
 import importlib.metadata
 import logging
 import shutil
