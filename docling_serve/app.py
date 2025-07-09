@@ -1,3 +1,4 @@
+from monkey_md5 import md5_non_security
 import asyncio
 import importlib.metadata
 import logging
