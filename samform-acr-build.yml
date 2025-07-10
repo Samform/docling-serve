@@ -1,24 +1,13 @@
 version: v1.1.0
 steps:
-  - task: docling-build
-    displayName: Build and push Docling docker image
-    inputs:
-      command: buildAndPush
-      dockerfile: Containerfile
-      buildContext: .
-      arguments: "--build-arg UV_SYNC_EXTRA_ARGS='--no-group pypi --group cu124'"
-      tags: |
-        docling-serve-cu124:git-submodule-1
-      platform: linux/amd64
-
-  az acr task create \
-  --registry samform \
-  --name Docling-Build \
-  --context . \
-  --file Containerfile \
-  --arg "UV_SYNC_EXTRA_ARGS=--no-group pypi --group cu124" \
-  --image docling-serve-cu124:git-submodule-1 \
-  --platform linux/amd64 \
-  --set BuildKitEnabled=true
-
+  - build: >
+      -t samform/docling-serve-cu124:git-submodule-4
+      -t samform.azurecr.io/docling-serve-cu124:git-submodule-4
+      -f Containerfile 
+      --platform linux/amd64 
+      https://github.com/Samform/docling-serve.git#update-local-changes
+    env:
+      - "DOCKER_BUILDKIT=1"
+  - push:
+      - samform.azurecr.io/docling-serve-cu124:git-submodule-4
 
