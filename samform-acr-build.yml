@@ -1,7 +1,7 @@
 version: v1.1.0
-steps:
+steps: # todo: add tag version as a variable
   - build: >
-      -t samform/docling-serve-cu124:git-submodule-6 
+      -t samform/docling-serve-cu124:git-submodule-6  
       -t samform.azurecr.io/docling-serve-cu124:git-submodule-6 
       -f Containerfile 
       --platform linux/amd64 
