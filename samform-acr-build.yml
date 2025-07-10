@@ -5,10 +5,10 @@ steps:
       -t samform.azurecr.io/docling-serve-cu124:git-submodule-5 
       -f Containerfile 
       --platform linux/amd64 
+      --build-arg 'UV_SYNC_EXTRA_ARGS=--no-group pypi --group cu124' 
       https://github.com/Samform/docling-serve.git#update-local-changes
     env:
       - "DOCKER_BUILDKIT=1"
-      - "UV_SYNC_EXTRA_ARGS=--no-group pypi --group cu124"
   - push:
       - samform.azurecr.io/docling-serve-cu124:git-submodule-5
 
