@@ -1,3 +1,4 @@
+import docling_serve.monkey_md5
 import asyncio
 import importlib.metadata
 import logging
