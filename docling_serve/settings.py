@@ -56,6 +56,10 @@ class DoclingServeSettings(BaseSettings):
     cors_methods: list[str] = ["*"]
     cors_headers: list[str] = ["*"]
 
+    # Downgrade the OpenAPI version to 3.0 because Azure API Management does not support 3.1
+    openapi_version: str = "3.0.1"  
+
+
     eng_kind: AsyncEngine = AsyncEngine.LOCAL
     # Local engine
     eng_loc_num_workers: int = 2

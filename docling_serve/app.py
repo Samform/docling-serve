@@ -147,6 +147,7 @@ def create_app():  # noqa: C901
         redoc_url=None if offline_docs_assets else "/docs",
         lifespan=lifespan,
         version=version,
+        openapi_version=docling_serve_settings.openapi_version,
     )
 
     origins = docling_serve_settings.cors_origins
