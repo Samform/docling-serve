@@ -1,12 +1,11 @@
 version: v1.1.0
 steps: # todo: add tag version as a variable
   - build: >
-      -t samform/docling-serve-cu124:dev
-      -t samformdevelopment.azurecr.io/docling-serve-cu124:dev
+      -t samformdevelopment.azurecr.io/docling-serve-cu124:dev-1
       -f Containerfile 
       --platform linux/amd64 
       https://github.com/Samform/docling-serve.git
     env:
       - "DOCKER_BUILDKIT=1"
   - push:
-      - samformdevelopment.azurecr.io/docling-serve-cu124:dev
+      - samformdevelopment.azurecr.io/docling-serve-cu124:dev-1
